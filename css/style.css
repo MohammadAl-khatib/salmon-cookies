@@ -5,7 +5,8 @@ body{
 h3{
     font-weight: 700;
     font-size: 25px;
-    margin: 12px 0;
+    margin-bottom: 50px;
+    margin-top: 25px;
     color: brown;
 }
 
@@ -30,4 +31,18 @@ table{
 }
 td:nth-child(1){
     font-family: 'Rubik', sans-serif;
+}
+fieldset{
+    border: white;
+    border-style: dashed;
+    padding: 10px 10px;
+}
+label{
+    margin-left: 10px;
+}
+input:focus{
+    background-color: rgb(126, 183, 236);
+}
+input[type=submit]{
+  margin-left: 10px;
 }
