@@ -3,6 +3,7 @@
 let openingHours = ['6:00 am', '7:00 am', '8:00 am', '9:00 am', '10:00 am', '11:00 am', '12:00 pm', '1:00 pm', '2:00 pm', '3:00 pm', '4:00 pm', '5:00 pm', '6:00 pm', '7:00 pm']
 let branchArray = [];
 let table = document.getElementById("table");
+let form = document.getElementById("form");
 
 function getRandom(max, min, avg) {
 
@@ -108,4 +109,15 @@ let lima = new CreateBranch('Lima', 2, 16, 4.6);
 
 tableFooter();
 
+form.addEventListener('submit',submitHandler);
+function submitHandler(event){
+    event.preventDefault();
+    let branchName = event.target.cityhName.value;
+    let maxCustomers = parseInt(event.target.maxCust.value);
+    let minCustomers = parseInt(event.target.minCust.value);
+    let avgCookies = event.target.avgCust.value;
 
+    table.deleteRow(-1);
+    new CreateBranch(branchName,minCustomers,maxCustomers,avgCookies);
+    tableFooter(); 
+}
